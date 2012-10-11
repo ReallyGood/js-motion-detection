@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+	<title>Magic Xylophone | soundstep</title>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="styles/main.css"/>
+</head>
+<body>
+
+<div id="container">
+
+	<div id="header">
+		<div class="allow">Click "Allow" above to play the xylophone just by waving your hands.</div>
+		<div class="instructions">To play the xylophone, turn up the volume and wave your hands.</div>
+		<div class="browsersWithVideo">This demo lets you play the xylophone using motion detection in your browser. Install <a href="https://www.google.com/landing/chrome/beta/" target="_blank">Chrome Beta</a> to play.</div>
+	</div>
+
+	<div id="content">
+
+		<video id="webcam" autoplay width="640" height="480"></video>
+
+		<video id="video-demo" controls="controls" poster="videos/jsdetection.jpg" width="640" height="480"  onclick="if(/Android/.test(navigator.userAgent))this.play();">
+			<source src="videos/jsdetection.mp4" type="video/mp4" />
+			<source src="videos/jsdetection.ogg" type="video/ogg" />
+			<source src="videos/jsdetection.webm" type="video/webm" />
+			Your browser doesn't support the html 5 video tag.
+		</video>
+
+		<canvas id="canvas-source" width="640" height="480"></canvas>
+		<canvas id="canvas-highlights" width="640" height="480"></canvas>
+		<canvas id="canvas-blended" width="640" height="480"></canvas>
+		<div class="motion-cam">Motion cam</div>
+
+		<div id="hotSpots">
+			<div id="pageBack"></div>
+			<div id="pageRefresh"></div>
+		</div>
+	</div>
+
+	<div class="loading">Loading assets...</div>
+
+	<div class="backFromVideo"><a href="#">Back<a/></div>
+
+	<div class="introduction">
+		<p>This demo lets you play the xylophone using motion detection in your browser.</p>
+		<p>Please allow access to your camera and microphone above.</p>
+	</div>
+
+	<div class="browsers">
+		<p>This demo lets you play the xylophone using motion detection in your browser.</p>
+		<p>Install <a href="https://www.google.com/landing/chrome/beta/" target="_blank">Chrome Beta</a> to play, or <a href="#" id="watchVideo">watch this video</a> to check it out first.</p>
+	</div>
+
+	<div id="footer">
+		<div class="magic">Based on <a href="http://www.stinkdigital.com/" target="_blank">Magic Xylophone</a> by <a href="http://www.stinkdigital.com/" target="_blank">Stink Digital</a></div>
+	</div>
+
+</div>
+
+<script src="js/libs/jquery.js"></script>
+<script src="js/app.js"></script>
+<script src="js/remote.js"></script>
+
+</body>
+</html>
