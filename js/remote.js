@@ -8,14 +8,10 @@
 	});
 
 	$('#pageRefresh').on('motionDetected', function(){
-		chrome.extension.sendMessage({type: 'refreshActiveTab'}, function(response) {
-			console.log(response);
-		});
+		console.log('refresh');
 	});
 
 	$('#pageBack').on('motionDetected', function(){
-		chrome.extension.sendMessage({type: 'backActiveTab'}, function(response) {
-			console.log(response);
-		});
+        console.log('back');
 	});
 })();
