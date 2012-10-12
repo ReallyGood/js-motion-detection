@@ -1,4 +1,4 @@
-js-motion-detection
+JS Motion Detection
 ===================
 
 This project tries to provide a basis for other motion-detection apps, by separating the framework and its consumption.
