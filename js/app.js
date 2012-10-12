@@ -217,15 +217,13 @@
 	function getCoords(){
 		$('#hotSpots').children().each(function(i, el){
 			var ratio = $("#canvas-highlights").width() / $('video').width();
-			var data = {
+            hotSpots[i] = {
 				x: this.offsetLeft / ratio,
 				y: this.offsetTop / ratio,
-				width: this.offsetWidth / ratio,
-				height: this.offsetHeight / ratio,
-				id: this.id,
+				width: this.scrollWidth / ratio,
+				height: this.scrollHeight / ratio,
                 el: el
 			};
-			hotSpots[i] = data;
 		});
 		highlightHotSpots();
 	}

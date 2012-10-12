@@ -174,14 +174,14 @@ video {
 }
 
 #hotSpots {position: relative; display: none; height: 100%;}
-#hotSpots > div {
+#hotSpots > *{
     position: absolute;
     -moz-transition:    all 80ms linear;
     -webkit-transition: all 80ms linear;
     transition:         all 80ms linear;
 }
 
-#pageBack {
+#one {
     width: 10%;
     height: 20%;
     top: 50%;
@@ -189,12 +189,18 @@ video {
     margin-top: -10%;
 }
 
-#pageRefresh {
+#another {
     width: 20%;
     height: 10%;
     top: 0;
     left: 50%;
     margin-left: -10%;
+}
+
+.link {
+    font-size: 22px;
+    color: #fff;
+    padding: .5%;
 }
 
 .active {

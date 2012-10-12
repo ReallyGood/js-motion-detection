@@ -1,17 +1,22 @@
 (function(){
 	$(window).on('motion', function(ev, data){
-		var spot = $('#'+data.spot.id);
-		spot.addClass('active').trigger('motionDetected');
+        console.log('detected motion at', new Date(), 'with data:', data);
+        var spot = $(data.spot.el);
+		spot.addClass('active');
 		setTimeout(function(){
 			spot.removeClass('active');
 		}, 230);
 	});
 
-	$('#pageRefresh').on('motionDetected', function(){
-		console.log('refresh');
+    $('.link').on('motion', function(ev, data){
+        console.log('motion detected on a link to', data.spot.el.href);
+    });
+
+	$('#one').on('motion', function(){
+		console.log('touched one');
 	});
 
-	$('#pageBack').on('motionDetected', function(){
-        console.log('back');
+	$('#another').on('motion', function(){
+        console.log('another');
 	});
 })();
