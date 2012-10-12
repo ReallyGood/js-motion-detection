@@ -103,7 +103,6 @@
 	}
 
 	function start() {
-		//$("#footer .instructions").show();
 		$('.loading').fadeOut();
 		$('#hotSpots').fadeIn();
 		$('body').addClass('black-background');
@@ -111,7 +110,6 @@
 		$(canvasSource).delay(600).fadeIn();
 		$(canvasBlended).delay(600).fadeIn();
 		$('#canvas-highlights').delay(600).fadeIn();
-		//$(".motion-cam").delay(600).fadeIn();
 		$(window).trigger('start');
 		update();
 	}
@@ -234,7 +232,7 @@
 		var ctx = canvas.getContext('2d');
 		canvas.width = canvas.width;
 		hotSpots.forEach(function (o, i) {
-			ctx.strokeStyle = 'rgba(0,255,0,0.3)';
+			ctx.strokeStyle = 'rgba(0,255,0,0.6)';
 			ctx.lineWidth = 1;
 			ctx.strokeRect(o.x, o.y, o.width, o.height);
 		});

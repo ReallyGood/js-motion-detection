@@ -136,16 +136,6 @@ video {
 	line-height: 55px;
 }
 
-.stinkdigital {
-	float: right;
-	padding-right: 20px;
-}
-
-.soundstep {
-	float: right;
-	padding-right: 10px;
-}
-
 #video-demo {
 	display: none;
 	position: absolute;
@@ -172,20 +162,6 @@ video {
 	bottom: 0;
 	right: 0;
 	opacity: 0;
-}
-
-.motion-cam {
-	font-family: 'Open Sans', sans-serif;
-	display: none;
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	font-size: 16px;
-	color: #7C7C7C;
-	bottom: 24%;
-	right: 0;
-	width: 28%;
-	white-space: nowrap;
 }
 
 #hotSpots {
