@@ -1,6 +1,11 @@
 (function() {
 
+    // config start
+    var OUTLINES = false;
+    // config end
+
 	window.hotSpots = [];
+
 	var content = $('#content');
 	var video = $('#webcam')[0];
 	var canvases = $('canvas');
@@ -77,13 +82,7 @@
 		//video.src = 'somevideo.webm'; // fallback.
 	}
 
-	var AudioContext = (
-		window.AudioContext ||
-		window.webkitAudioContext ||
-		null
-	);
-
-	var timeOut, lastImageData;
+	var lastImageData;
 	var canvasSource = $("#canvas-source")[0];
 	var canvasBlended = $("#canvas-blended")[0];
 
@@ -225,7 +224,7 @@
                 el: el
 			};
 		});
-		highlightHotSpots();
+		if(OUTLINES) highlightHotSpots();
 	}
 
 	$(window).on('start resize', getCoords);

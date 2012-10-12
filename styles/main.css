@@ -181,6 +181,16 @@ video {
     transition:         all 80ms linear;
 }
 
+/* Feel free to change this or turn it off altogether*/
+.active {
+    background: rgba(255,255,255,0.7);
+    -moz-transition:    all 150ms linear;
+    -webkit-transition: all 150ms linear;
+    transition:         all 150ms linear;
+}
+
+
+/* Sample hotspots */
 #one {
     width: 10%;
     height: 20%;
@@ -201,11 +211,4 @@ video {
     font-size: 22px;
     color: #fff;
     padding: .5%;
-}
-
-.active {
-    background: rgba(255,255,255,0.7);
-    -moz-transition:    all 150ms linear;
-    -webkit-transition: all 150ms linear;
-    transition:         all 150ms linear;
 }
