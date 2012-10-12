@@ -8,4 +8,4 @@ Any child element you add inside `<div id="hotSpots"></div>` will automagically 
 
 You could control its appearance & position with CSS, and hook to the `motion` events with jQuery / plain JS.
 
-See some examples in [remote.js](https://github.com/RonnyO/js-motion-detection/blob/master/js/remote.js) (open your console when you run it).
+See some examples in [sample.js](https://github.com/RonnyO/js-motion-detection/blob/master/js/sample.js) (open your console when you run it).
