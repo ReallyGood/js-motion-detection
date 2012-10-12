@@ -194,6 +194,7 @@
 	}
 
 	function checkAreas() {
+        var data;
 		for(var h = 0; h < hotSpots.length; h++){
 			var blendedData = contextBlended.getImageData(hotSpots[h].x, hotSpots[h].y, hotSpots[h].width, hotSpots[h].height);
 			var i = 0;
@@ -207,20 +208,22 @@
 			average = Math.round(average / (blendedData.data.length * 0.25));
 			if (average > 10) {
 				// over a small limit, consider that a movement is detected
-				$(window).trigger('motion', {confidence: average, spot: hotSpots[h]});
+				data = {confidence: average, spot: hotSpots[h]};
+                $(data.spot.el).trigger('motion', data);
 			}
 		}
 	}
 
 	function getCoords(){
-		$('#hotSpots > div').each(function(i){
+		$('#hotSpots').children().each(function(i, el){
 			var ratio = $("#canvas-highlights").width() / $('video').width();
 			var data = {
 				x: this.offsetLeft / ratio,
 				y: this.offsetTop / ratio,
 				width: this.offsetWidth / ratio,
 				height: this.offsetHeight / ratio,
-				id: this.id
+				id: this.id,
+                el: el
 			};
 			hotSpots[i] = data;
 		});
