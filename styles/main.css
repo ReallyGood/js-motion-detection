@@ -1,18 +1,19 @@
 body {
-    background: #FBFBF8;
-    font-family: 'Open Sans', sans-serif;
+	background: #FBFBF8;
+	font-family: 'Open Sans', sans-serif;
 	font-size: 12px;
-    padding: 0;
-    margin: 0;
-    color: #333;
+	padding: 0;
+	margin: 0;
+	color: #333;
 }
+
 .black-background {
-    background-color: #000;
-    -webkit-transition: background-color 200ms ease 600ms;
-    -moz-transition: background-color 200ms ease 600ms;
-    -o-transition: background-color 200ms ease 600ms;
-    -ms-transition: background-color 200ms ease 600ms;
-    transition: background-color 200ms ease 600ms;
+	background-color: #000;
+	-webkit-transition: background-color 200ms ease 600ms;
+	-moz-transition: background-color 200ms ease 600ms;
+	-o-transition: background-color 200ms ease 600ms;
+	-ms-transition: background-color 200ms ease 600ms;
+	transition: background-color 200ms ease 600ms;
 }
 
 video {
@@ -22,193 +23,211 @@ video {
 #container {
 
 }
+
 #content {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    overflow: hidden;
-    z-index:0;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	overflow: hidden;
+	z-index: 0;
 }
+
 .loading {
-    display: none;
-    position: absolute;
-    font-size: 20px;
-    text-align: center;
-    width: 200px;
-    left: 50%;
-    margin-left: -100px;
-    top: 50%;
-    margin-top: -40px;
+	display: none;
+	position: absolute;
+	font-size: 20px;
+	text-align: center;
+	width: 200px;
+	left: 50%;
+	margin-left: -100px;
+	top: 50%;
+	margin-top: -40px;
 }
+
 .browsers,
 .introduction {
-    display:  none;
-    position: absolute;
-    width: 100%;
-    text-align: center;
-    font-size: 20px;
-    top: 50%;
-    margin-top: -27px;
+	display: none;
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	font-size: 20px;
+	top: 50%;
+	margin-top: -27px;
 }
+
 .browsers p,
 .introduction p {
-    margin: 0 0 0.1em 0;
-    padding: 0;
+	margin: 0 0 0.1em 0;
+	padding: 0;
 }
+
 .browsers a {
-    color: #333;
+	color: #333;
 }
 
 #header {
-    position: absolute;
-    height: 55px;
-    top: 0;
-    left: 0;
-    right: 0;
-    overflow: hidden;
-    z-index:2;
-    color: #aaa;
-    font-size: 20px;
+	position: absolute;
+	height: 55px;
+	top: 0;
+	left: 0;
+	right: 0;
+	overflow: hidden;
+	z-index: 2;
+	color: #aaa;
+	font-size: 20px;
 }
 
 .browsersWithVideo,
 .instructions,
 .allow {
-    display: none;
-    line-height: 55px;
-    margin-left: 20px;
-}
-.browsersWithVideo {
-    font-size: 15px;
-}
-.browsersWithVideo a {
-    color: #AAA;
-}
-.backFromVideo {
-    display: none;
-    position: absolute;
-    width: 100%;
-    bottom: 64px;
-    text-align:  center;
-    font-size: 14px;
-}
-.backFromVideo a {
-    color: #333;
+	display: none;
+	line-height: 55px;
+	margin-left: 20px;
 }
 
+.browsersWithVideo {
+	font-size: 15px;
+}
+
+.browsersWithVideo a {
+	color: #AAA;
+}
+
+.backFromVideo {
+	display: none;
+	position: absolute;
+	width: 100%;
+	bottom: 64px;
+	text-align: center;
+	font-size: 14px;
+}
+
+.backFromVideo a {
+	color: #333;
+}
 
 #footer {
-    position: absolute;
-    height: 55px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    overflow: hidden;
-    z-index:1;
+	position: absolute;
+	height: 55px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	overflow: hidden;
+	z-index: 1;
 }
+
 #footer a {
-    color: #aaa;
-    text-decoration: underline;
+	color: #aaa;
+	text-decoration: underline;
 }
+
 #footer a:hover {
-    color: #ccd56d;
-    text-decoration: underline;
+	color: #ccd56d;
+	text-decoration: underline;
 }
+
 .magic {
-    float: left;
-    padding-left: 20px;
-    font-size: 20px;
-    color: #AAA;
-    line-height: 55px;
+	float: left;
+	padding-left: 20px;
+	font-size: 20px;
+	color: #AAA;
+	line-height: 55px;
 }
+
 .stinkdigital {
-    float: right;
-    padding-right: 20px;
+	float: right;
+	padding-right: 20px;
 }
+
 .soundstep {
-    float: right;
-    padding-right: 10px;
+	float: right;
+	padding-right: 10px;
 }
 
 #video-demo {
 	display: none;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    margin-left: -320px;
-    margin-top: -240px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -320px;
+	margin-top: -240px;
 }
 
 #canvas-source {
-    width: 100%;
+	width: 100%;
 }
+
 #canvas-source, #canvas-highlights {
-    display: none;
-    position: absolute;
-    left: 0;
-    top: 0;
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 0;
 }
 
 #canvas-blended {
-    display: none;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    opacity: 0;
+	display: none;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	opacity: 0;
 }
 
 .motion-cam {
-    font-family: 'Open Sans', sans-serif;
-    display:none;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    font-size: 16px;
-    color: #7C7C7C;
-    bottom: 24%;
-    right: 0;
-    width: 28%;
-    white-space: nowrap;
+	font-family: 'Open Sans', sans-serif;
+	display: none;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	font-size: 16px;
+	color: #7C7C7C;
+	bottom: 24%;
+	right: 0;
+	width: 28%;
+	white-space: nowrap;
 }
 
-#hotSpots {position: relative; display: none; height: 100%;}
-#hotSpots > *{
-    position: absolute;
-    -moz-transition:    all 80ms linear;
-    -webkit-transition: all 80ms linear;
-    transition:         all 80ms linear;
+#hotSpots {
+	position: relative;
+	display: none;
+	height: 100%;
+}
+
+#hotSpots > * {
+	position: absolute;
+	-moz-transition: all 80ms linear;
+	-webkit-transition: all 80ms linear;
+	transition: all 80ms linear;
 }
 
 /* Feel free to change this or turn it off altogether*/
 .active {
-    background: rgba(255,255,255,0.7);
-    -moz-transition:    all 150ms linear;
-    -webkit-transition: all 150ms linear;
-    transition:         all 150ms linear;
+	background: rgba(255, 255, 255, 0.7);
+	-moz-transition: all 150ms linear;
+	-webkit-transition: all 150ms linear;
+	transition: all 150ms linear;
 }
-
 
 /* Sample hotspots */
 #one {
-    width: 10%;
-    height: 20%;
-    top: 50%;
-    left: 0;
-    margin-top: -10%;
+	width: 10%;
+	height: 20%;
+	top: 50%;
+	left: 0;
+	margin-top: -10%;
 }
 
 #another {
-    width: 20%;
-    height: 10%;
-    top: 0;
-    left: 50%;
-    margin-left: -10%;
+	width: 20%;
+	height: 10%;
+	top: 0;
+	left: 50%;
+	margin-left: -10%;
 }
 
 .link {
-    font-size: 22px;
-    color: #fff;
-    padding: .5%;
+	font-size: 22px;
+	color: #fff;
+	padding: .5%;
 }

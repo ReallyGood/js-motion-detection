@@ -1,8 +1,8 @@
-(function() {
+(function () {
 
-    // config start
-    var OUTLINES = false;
-    // config end
+	// config start
+	var OUTLINES = false;
+	// config end
 
 	window.hotSpots = [];
 
@@ -10,7 +10,7 @@
 	var video = $('#webcam')[0];
 	var canvases = $('canvas');
 
-	var resize = function() {
+	var resize = function () {
 		var ratio = video.width / video.height;
 		var w = $(this).width();
 		var h = $(this).height() - 110;
@@ -22,15 +22,15 @@
 			content.height(h);
 			content.width(h * ratio);
 		}
-		canvases.width( content.width() );
-		canvases.height( content.height() );
-		content.css('left', (w - content.width()) / 2 );
-		content.css('top', ((h - content.height()) / 2) + 55 );
+		canvases.width(content.width());
+		canvases.height(content.height());
+		content.css('left', (w - content.width()) / 2);
+		content.css('top', ((h - content.height()) / 2) + 55);
 	}
 	$(window).resize(resize);
-	$(window).ready(function() {
+	$(window).ready(function () {
 		resize();
-		$('#watchVideo').click(function() {
+		$('#watchVideo').click(function () {
 			$(".browsers").fadeOut();
 			$(".browsersWithVideo").delay(300).fadeIn();
 			$("#video-demo").delay(300).fadeIn();
@@ -39,7 +39,7 @@
 			event.stopPropagation();
 			return false;
 		});
-		$('.backFromVideo a').click(function() {
+		$('.backFromVideo a').click(function () {
 			$(".browsersWithVideo").fadeOut();
 			$('.backFromVideo').fadeOut();
 			$(".browsers").fadeIn();
@@ -64,17 +64,17 @@
 		return;
 	}
 
-	var webcamError = function(e) {
+	var webcamError = function (e) {
 		alert('Webcam error!', e);
 	};
 
 	if (navigator.getUserMedia) {
-		navigator.getUserMedia({audio: true, video: true}, function(stream) {
+		navigator.getUserMedia({audio: true, video: true}, function (stream) {
 			video.src = stream;
 			initialize();
 		}, webcamError);
 	} else if (navigator.webkitGetUserMedia) {
-		navigator.webkitGetUserMedia({audio:true, video:true}, function(stream) {
+		navigator.webkitGetUserMedia({audio: true, video: true}, function (stream) {
 			video.src = window.webkitURL.createObjectURL(stream);
 			initialize();
 		}, webcamError);
@@ -116,13 +116,13 @@
 		update();
 	}
 
-	window.requestAnimFrame = (function(){
-		return window.requestAnimationFrame    ||
-			window.webkitRequestAnimationFrame ||
-			window.mozRequestAnimationFrame    ||
-			window.oRequestAnimationFrame      ||
-			window.msRequestAnimationFrame     ||
-			function( callback ){
+	window.requestAnimFrame = (function () {
+		return window.requestAnimationFrame       ||
+			   window.webkitRequestAnimationFrame ||
+			   window.mozRequestAnimationFrame    ||
+			   window.oRequestAnimationFrame      ||
+			   window.msRequestAnimationFrame     ||
+			function (callback) {
 				window.setTimeout(callback, 1000 / 60);
 			};
 	})();
@@ -169,10 +169,10 @@
 		if (data1.length != data2.length) return null;
 		var i = 0;
 		while (i < (data1.length * 0.25)) {
-			target[4*i] = data1[4*i] == 0 ? 0 : fastAbs(data1[4*i] - data2[4*i]);
-			target[4*i+1] = data1[4*i+1] == 0 ? 0 : fastAbs(data1[4*i+1] - data2[4*i+1]);
-			target[4*i+2] = data1[4*i+2] == 0 ? 0 : fastAbs(data1[4*i+2] - data2[4*i+2]);
-			target[4*i+3] = 0xFF;
+			target[4 * i] = data1[4 * i] == 0 ? 0 : fastAbs(data1[4 * i] - data2[4 * i]);
+			target[4 * i + 1] = data1[4 * i + 1] == 0 ? 0 : fastAbs(data1[4 * i + 1] - data2[4 * i + 1]);
+			target[4 * i + 2] = data1[4 * i + 2] == 0 ? 0 : fastAbs(data1[4 * i + 2] - data2[4 * i + 2]);
+			target[4 * i + 3] = 0xFF;
 			++i;
 		}
 	}
@@ -181,26 +181,26 @@
 		if (data1.length != data2.length) return null;
 		var i = 0;
 		while (i < (data1.length * 0.25)) {
-			var average1 = (data1[4*i] + data1[4*i+1] + data1[4*i+2]) / 3;
-			var average2 = (data2[4*i] + data2[4*i+1] + data2[4*i+2]) / 3;
+			var average1 = (data1[4 * i] + data1[4 * i + 1] + data1[4 * i + 2]) / 3;
+			var average2 = (data2[4 * i] + data2[4 * i + 1] + data2[4 * i + 2]) / 3;
 			var diff = threshold(fastAbs(average1 - average2));
-			target[4*i] = diff;
-			target[4*i+1] = diff;
-			target[4*i+2] = diff;
-			target[4*i+3] = 0xFF;
+			target[4 * i] = diff;
+			target[4 * i + 1] = diff;
+			target[4 * i + 2] = diff;
+			target[4 * i + 3] = 0xFF;
 			++i;
 		}
 	}
 
 	function checkAreas() {
-        var data;
-		for(var h = 0; h < hotSpots.length; h++){
+		var data;
+		for (var h = 0; h < hotSpots.length; h++) {
 			var blendedData = contextBlended.getImageData(hotSpots[h].x, hotSpots[h].y, hotSpots[h].width, hotSpots[h].height);
 			var i = 0;
 			var average = 0;
 			while (i < (blendedData.data.length * 0.25)) {
 				// make an average between the color channel
-				average += (blendedData.data[i*4] + blendedData.data[i*4+1] + blendedData.data[i*4+2]) / 3;
+				average += (blendedData.data[i * 4] + blendedData.data[i * 4 + 1] + blendedData.data[i * 4 + 2]) / 3;
 				++i;
 			}
 			// calculate an average between the color values of the spot area
@@ -208,35 +208,35 @@
 			if (average > 10) {
 				// over a small limit, consider that a movement is detected
 				data = {confidence: average, spot: hotSpots[h]};
-                $(data.spot.el).trigger('motion', data);
+				$(data.spot.el).trigger('motion', data);
 			}
 		}
 	}
 
-	function getCoords(){
-		$('#hotSpots').children().each(function(i, el){
+	function getCoords() {
+		$('#hotSpots').children().each(function (i, el) {
 			var ratio = $("#canvas-highlights").width() / $('video').width();
-            hotSpots[i] = {
-				x: this.offsetLeft / ratio,
-				y: this.offsetTop / ratio,
-				width: this.scrollWidth / ratio,
+			hotSpots[i] = {
+				x:      this.offsetLeft / ratio,
+				y:      this.offsetTop / ratio,
+				width:  this.scrollWidth / ratio,
 				height: this.scrollHeight / ratio,
-                el: el
+				el:     el
 			};
 		});
-		if(OUTLINES) highlightHotSpots();
+		if (OUTLINES) highlightHotSpots();
 	}
 
 	$(window).on('start resize', getCoords);
 
-	function highlightHotSpots(){
+	function highlightHotSpots() {
 		var canvas = $("#canvas-highlights")[0];
 		var ctx = canvas.getContext('2d');
 		canvas.width = canvas.width;
-		hotSpots.forEach(function(o, i){
+		hotSpots.forEach(function (o, i) {
 			ctx.strokeStyle = 'rgba(0,255,0,0.3)';
 			ctx.lineWidth = 1;
-			ctx.strokeRect(o.x,o.y,o.width,o.height);
+			ctx.strokeRect(o.x, o.y, o.width, o.height);
 		});
 	}
 })();
