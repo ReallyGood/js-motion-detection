@@ -16,4 +16,5 @@ You could control its appearance & position with CSS, and hook to the `motion` e
 * See some examples in [sample.js](https://github.com/ReallyGood/js-motion-detection/blob/master/js/sample.js)
 * Open up the demo **[here](http://reallygood.co.il/plugins/motion/)**. Hit Allow, check the console.
 
-_Tested in Chrome Canary, might not yet work in your browser_
+#### License
+[Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported License](http://creativecommons.org/licenses/by-nc-sa/3.0/)
