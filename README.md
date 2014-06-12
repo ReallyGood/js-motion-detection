@@ -18,5 +18,3 @@ You could control its appearance & position with CSS, and hook to the `motion` e
 
 #### License
 [Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported License](http://creativecommons.org/licenses/by-nc-sa/3.0/)
-
-(Last update: 12/6/2014 18:27)
