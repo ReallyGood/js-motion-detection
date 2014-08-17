@@ -73,6 +73,11 @@
 			video.src = stream;
 			initialize();
 		}, webcamError);
+	} else if (navigator.mozGetUserMedia) {
+		navigator.mozGetUserMedia({audio: true, video: true}, function (stream) {
+			video.mozSrcObject = stream;
+			initialize();
+		}, webcamError);
 	} else if (navigator.webkitGetUserMedia) {
 		navigator.webkitGetUserMedia({audio: true, video: true}, function (stream) {
 			video.src = window.webkitURL.createObjectURL(stream);
@@ -99,7 +104,11 @@
 		$('.introduction').fadeOut();
 		$('.allow').fadeOut();
 		$('.loading').delay(300).fadeIn();
-		start();
+		video.addEventListener('canplay', function canplayed() {
+			video.removeEventListener('canplay', canplayed);
+			// Video is only available until a short time.
+			start();
+		});
 	}
 
 	function start() {
@@ -133,7 +142,11 @@
 	}
 
 	function drawVideo() {
-		contextSource.drawImage(video, 0, 0, video.width, video.height);
+		try {
+			contextSource.drawImage(video, 0, 0, video.width, video.height);
+		} catch (e) {
+			console.error(e);
+		}
 	}
 
 	function blend() {
