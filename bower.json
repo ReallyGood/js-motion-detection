@@ -1,0 +1,22 @@
+{
+  "name": "ReallyGood/js-motion-detection",
+  "description": "This project tries to provide as a basis for other motion-detection apps, by separating the framework from its implementations.",
+  "keywords": [
+    "motion",
+    "detection"
+  ],
+  "license": "CC-BY-3.0",
+  "main": [
+    "./js/app.js",
+    "./styles/main.css"
+  ],
+  "moduleType": "globals",
+  "authors": [
+    {"RonnyO": "https://github.com/RonnyO"}
+  ],
+  "homepage": "http://reallygood.co.il/plugins/motion/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ReallyGood/js-motion-detection"
+  }
+}
