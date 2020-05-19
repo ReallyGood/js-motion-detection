@@ -70,7 +70,7 @@
 
 	if (navigator.getUserMedia) {
 		navigator.getUserMedia({audio: true, video: true}, function (stream) {
-			video.src = stream;
+			video.srcObject = stream;
 			initialize();
 		}, webcamError);
 	} else if (navigator.webkitGetUserMedia) {
